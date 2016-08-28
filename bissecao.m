@@ -2,17 +2,22 @@ clc
 clear all
 close all
 %intervalo inferior
-a=1;
+a=-1.5;
 %intervalo superior
-b=2;
+b=1.75;
 %funcao
-f=@(x) x^3 + 4*x^2 - 10;
+%f=@(x) x^3 + 4*x^2 - 10;
+f=@(x) (x+2)*(x+1)*x*((x-1)^3)*(x-2);
 %tolerancia relativa
 e1=0.00001;
 %tolerancia absoluta
 e2=0.00005;
+%tolerancia
+tol=10^-4;
 %numero maximo de iteracoes
-nmax=1000;
+%nmax=1000;
+nmax= log2(b-a) - log2(tol);
+nmax = ceil(nmax)
 
 fafb = f(a)*f(b)
 fa = abs(f(a));
@@ -45,4 +50,17 @@ else
             fb = abs(f(b)); 
         end
     end
+end
+
+%intervalo inferior
+a=-1.5;
+%intervalo superior
+b=1.75;
+%plot da função
+if 1
+figure(1)
+fplot(@(x) (x+2)*(x+1)*x*((x-1)^3)*(x-2), [a, b], 'b') 
+hold on
+plot(p, f(p), 'ro');
+hold off
 end
