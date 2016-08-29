@@ -2,12 +2,12 @@ clc
 clear all
 close all
 %intervalo inferior
-a=-1.5;
+a=1;
 %intervalo superior
-b=1.75;
+b=2;
 %funcao
-%f=@(x) x^3 + 4*x^2 - 10;
-f=@(x) (x+2)*(x+1)*x*((x-1)^3)*(x-2);
+f=@(x) x^3 + 4*x^2 - 10;
+%f=@(x) (x+2)*(x+1)*x*((x-1)^3)*(x-2);
 %tolerancia relativa
 e1=0.00001;
 %tolerancia absoluta
@@ -53,14 +53,23 @@ else
 end
 
 %intervalo inferior
-a=-1.5;
+a=1;
 %intervalo superior
-b=1.75;
-%plot da função
+b=2;
+
+str_fun = func2str(f);
+%plot da função e de outras firulas
 if 1
-figure(1)
-fplot(@(x) (x+2)*(x+1)*x*((x-1)^3)*(x-2), [a, b], 'b') 
+fig = figure(1)
+set(fig,'name','Método Bissecção','numbertitle','off')
+fplot(f, [a, b], 'b') 
 hold on
-plot(p, f(p), 'ro');
+plot(p, f(p), 'r*');
+title(['\fontsize{8} Localização da raíz da função ', str_fun ,' no intervalo [',num2str(a),',',num2str(b),'] especificado'])
 hold off
+str_root = ['Root(p) = ',num2str(p)];
+text(p,f(p),str_root,'HorizontalAlignment','right')
+xlabel('x')
+ylabel('f(x)')
+grid on
 end
