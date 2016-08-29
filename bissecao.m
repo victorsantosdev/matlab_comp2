@@ -44,7 +44,7 @@ else
                 a = p;
             end
             %meu intervalo eh [a,p] ou [p,b]
-            fprintf('n:%d, a:%f, b:%f, p:%f, fp: %f\n', iterador, a, b, p, f(p));
+            fprintf('n:%d, a%d:%f, b%d:%f, p%d:%f, f(p%d): %f\n', iterador, iterador, a, iterador, b, iterador, p, iterador, f(p));
         
             iterador = iterador + 1;
             fa = abs(f(a));

@@ -28,7 +28,7 @@ while ( (diffmodulos > tol)  &&  iterador < nmax)
     i = i + 1;
     p_array(i) = p_array(i-1) - (f(p_array(i-1))*( p_array(i-1) - p_array(i-2) ) )/ (f(p_array(i-1)) - f(p_array(i-2))); 
     
-    fprintf('n:%d, pn:%f, fpn: %f\n', i, p_array(i), f(p_array(i)));
+    fprintf('n:%d, p%d:%f, f(p%d): %f\n', i, i, p_array(i),i, f(p_array(i)));
 
     iterador = iterador + 1;
     %fp_abs = abs(f(p_array(i)));
