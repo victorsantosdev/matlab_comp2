@@ -19,7 +19,7 @@ tol=10^-4;
 nmax= log2(b-a) - log2(tol);
 nmax = ceil(nmax)
 
-fafb = f(a)*f(b)
+fafb = f(a)*f(b);
 fa = abs(f(a));
 fb = abs(f(b));
 iterador = 1;
@@ -60,16 +60,16 @@ b=2;
 str_fun = func2str(f);
 %plot da função e de outras firulas
 if 1
-fig = figure(1)
-set(fig,'name','Método Bissecção','numbertitle','off')
-fplot(f, [a, b], 'b') 
-hold on
-plot(p, f(p), 'r*');
-title(['\fontsize{8} Localização da raíz da função ', str_fun ,' no intervalo [',num2str(a),',',num2str(b),'] especificado'])
-hold off
-str_root = ['Root(p) = ',num2str(p)];
-text(p,f(p),str_root,'HorizontalAlignment','right')
-xlabel('x')
-ylabel('f(x)')
-grid on
+    fig = figure(1);
+    set(fig,'name','Método Bissecção','numbertitle','off')
+    fplot(f, [a, b], 'b') 
+    hold on
+    plot(p, f(p), 'r*');
+    title(['\fontsize{8} Localização da raíz da função ', str_fun ,' no intervalo [',num2str(a),',',num2str(b),'] especificado'])
+    hold off
+    str_root = ['Root(p) = ',num2str(p)];
+    text(p,f(p),str_root,'HorizontalAlignment','right')
+    xlabel('x')
+    ylabel('f(x)')
+    grid on
 end
