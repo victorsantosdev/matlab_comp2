@@ -6,7 +6,8 @@ a=1;
 %intervalo superior
 b=2;
 %funcao
-f=@(x) x^3 + 4*x^2 - 10;
+f=@(x) x^2 -3;
+%f=@(x) x^3 + 4*x^2 - 10;
 %f=@(x) (x+2)*(x+1)*x*((x-1)^3)*(x-2);
 %tolerancia relativa
 e1=0.00001;
@@ -43,7 +44,7 @@ else
                 a = p;
             end
             %meu intervalo eh [a,p] ou [p,b]
-            fprintf('n:%d, a:%d, b:%d, p:%d, fp: %d\n', iterador, a, b, p, f(p));
+            fprintf('n:%d, a:%f, b:%f, p:%f, fp: %f\n', iterador, a, b, p, f(p));
         
             iterador = iterador + 1;
             fa = abs(f(a));
